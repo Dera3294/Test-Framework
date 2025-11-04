@@ -15,6 +15,10 @@ fi
 # Copier Test.xml en web.xml
 cp Test.xml WEB-INF/web.xml
 
+# Compiler les classes de test (incluant Testsprint3) dans WEB-INF/classes
+mkdir -p WEB-INF/classes
+javac -cp "WEB-INF/lib/framework.jar:../Framework/lib/jakarta.servlet-api.jar" -d WEB-INF/classes Testsprint3/*.java 2>/dev/null || true
+
 # Générer le WAR
 jar cvf Test1.war .
 
