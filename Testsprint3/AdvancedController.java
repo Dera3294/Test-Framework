@@ -5,6 +5,7 @@ import framework.annotation.UrlHandler;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import framework.scanner.ModelView;
 
 @Controller("Contrôleur avancé Sprint 3")
 public class AdvancedController {
@@ -15,9 +16,8 @@ public class AdvancedController {
     }
 
     @UrlHandler(url = "/write")
-    public void write(HttpServletResponse response) throws IOException {
-        response.setContentType("text/plain;charset=UTF-8");
-        response.getWriter().println("Direct write from AdvancedController");
+    public ModelView write(){
+        return new ModelView("a.jsp");
     }
 }
 
